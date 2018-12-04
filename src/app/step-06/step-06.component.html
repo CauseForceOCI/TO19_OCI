@@ -1,0 +1,108 @@
+<app-stepper></app-stepper>
+
+<!-- Preloader -->
+<div class="mat-spinner-container" *ngIf="!surveyResults">
+	<div class="spinner-inner">
+		<mat-spinner></mat-spinner>
+	</div>
+</div>
+
+<div class="container" id="step-06" *ngIf="data">
+  <div class="row">
+    <div class="form-container">
+      <h3>Register Now for 2019!</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-container">
+      <p>
+        Renew your commitment to our historic journey and join us for The Ride on August 24-25, 2019 at the discounted rate of just
+        <strong>$15!</strong> Not only will you have secured your place for next year, but you'll also receive a
+        <strong>free commemorative long-sleeve t-shirt</strong>, available for pick-up during the 2018 Ride weekend!
+      </p>
+    </div>
+  </div>
+
+  <div class="row" >
+
+    <form class="form-container" [formGroup]="upsellForm" *ngIf="surveyResults.getSurveyResponsesResponse">
+      <div class="survey-res">
+
+        <div class="form-group">
+          <p>
+            <strong class="txt-blue">Renew your commitment to conquering cancer today!</strong>
+          </p>
+          <p>
+            <strong>NOTE:</strong> If you choose to pre-register now and have met your fundraising minimum for 2018, the payment link will appear after clicking 'NEXT'.
+          </p>
+          <mat-radio-group class="route-radio-group" formControlName="upsellSelect" [(ngModel)]="upsellResults">
+            <mat-radio-button
+              required
+              class="route-radio-button"
+              color="primary"
+              *ngFor="let upsell of upsells"
+              [value]="upsell.value">
+              {{upsell.viewValue}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="form-container">
+      <img class="img-fluid" src="assets/images/18068_RCCA_UpsellImage_BC.jpg" alt="Upsell Pre-Reg">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-container" *ngIf="surveyResults">
+      <p>
+        <strong class="txt-blue">Want to go the extra distance?</strong>
+      </p>
+      <p>
+       Then make a donation with your 2019 registration! Donate $150 with your registration and receive the free commemorative t-shirt and a commemorative wristband.
+      </p>
+      <div class="orContainer">
+        <div class="orTextCont">
+          <h4 class="text-center">
+            <strong>OR</strong>
+          </h4>
+        </div>
+        <div class="border-btm"></div>
+      </div>
+      <p>
+        Donate $250 with your registration and receive the free commemorative t-shirt, a commemorative wristband, and we'll waive the registration fee!
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-container">
+      <small>
+        Registration promotions are only available for participants who register as a Rider for the 2019 Ride to Conquer Cancer.
+      </small>
+    </div>
+  </div>
+
+  <div class="row bottom-nav-row" *ngIf="surveyResults">
+    <div class="form-container">
+      <div class="btn-container">
+        <button mat-raised-button color="accent" class="prev-btn button-font" (click)="previousFlowStep()">
+          Back
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          class="next-btn button-font"
+          (click)="updateSurveyRes()"
+          [disabled]="upsellForm.invalid">
+          Next
+        </button>
+      </div>
+      <div class="save-col">
+        <a (click)="saveSurveyResponses()" class="save-later float-right text-uppercase">Save For Later</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<!-- Rider Text -->
+<div class="dialog-cont" *ngIf="dataService.participationType !== 'Crew'">
+  <h1 *ngIf="dataService" mat-dialog-title class="dialog-h1">
+    Welcome to Online Check-in, {{dataService.firstName}}!
+  </h1>
+  <div mat-dialog-content>
+    <p>
+      This automated check-in process is designed to save you time and make event check-in easier than ever! Here is what you'll need to do:
+    </p>
+    <ul>
+      <li>
+        Review your online profile. You will need to complete this step first to confirm the mailing address for your Rider packet.
+      </li>
+      <li>
+        Enter your emergency contact information.
+      </li>
+      <li>
+        Watch our mandatory safety video.
+      </li>
+      <li>
+        If you have not reached the fundraising minimum, we will ask that you enter your credit card information to make an instant or delayed self-pledge.
+      </li>
+    </ul>
+    <p class="font-ital">
+      Instant Self-Pledge: Make a self-donation now in the amount required to meet the fundraising minimum.
+    </p>
+    <p class="font-ital">
+      Delayed Self-Pledge: Commit to raising the fundraising minimum by October 24, 2018 with a $2 self-donation. This nominal self-donation will allow your credit card to be kept securely on file and charged for any balance required to meet the fundraising minimum by October 24.
+    </p>
+    <button color="primary" mat-raised-button (click)="onNoClick()">Close</button>
+  </div>
+</div>
+<!-- Crew Text -->
+<div class="dialog-cont" *ngIf="dataService.participationType === 'Crew'">
+  <h1 *ngIf="dataService" mat-dialog-title class="dialog-h1">
+    Welcome to Online Check-in, {{dataService.firstName}}!
+  </h1>
+  <div mat-dialog-content>
+    <p>
+      This automated check-in process is designed to save you time and make event check-in easier than ever! Here is what you'll need to do:
+    </p>
+    <ul>
+      <li>
+        Review your online profile. You will need to complete this step first to confirm your information for the weekend.
+      </li>
+      <li>
+        Enter your emergency contact information.
+      </li>
+      <li>
+        Watch our mandatory safety video.
+      </li>
+    </ul>
+    <button color="primary" mat-raised-button (click)="onNoClick()">Close</button>
+  </div>
+</div>

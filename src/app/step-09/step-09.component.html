@@ -1,0 +1,153 @@
+<app-stepper></app-stepper>
+
+<!-- Preloader -->
+<div class="mat-spinner-container" *ngIf="!data.regResponse">
+	<div class="spinner-inner">
+		<mat-spinner></mat-spinner>
+	</div>
+</div>
+
+<div class="container" id="step-09">
+  <div class="form-container" >
+    <div class="row" *ngIf="data.getConsInfo && data.regResponse">
+      <div class="col-md-6">
+        <h3 class="txt-blue text-uppercase">Congratulations</h3>
+        <p>You have completed Online Check-in!</p>
+        <br>
+      </div>
+      <div class="col-md-6 print-col">
+        <a (click)="print()">
+          <strong>Print This Screen</strong>
+        </a>
+      </div>
+    </div>
+    <div class="row" *ngIf="data.getConsInfo">
+      <div class="col-md-6">
+        <h4>Personal Information</h4>
+        <p>
+          <strong>First name:</strong> {{data.getConsInfo.getConsResponse.name.first}}
+        </p>
+        <p>
+          <strong>Last name:</strong> {{data.getConsInfo.getConsResponse.name.last}}
+        </p>
+        <p>
+          <strong>Gender:</strong> {{data.getConsInfo.getConsResponse.gender}}
+        </p>
+        <p>
+          <strong>Address 1:</strong> {{data.getConsInfo.getConsResponse.primary_address.street1}}
+        </p>
+        <p>
+          <strong>Address 2:</strong> <span *ngIf="data.getConsInfo.getConsResponse.primary_address.street2">{{data.getConsInfo.getConsResponse.primary_address.street2}}</span>
+        </p>
+        <p>
+          <strong>City:</strong> {{data.getConsInfo.getConsResponse.primary_address.city}}
+        </p>
+        <p>
+          <strong>Province:</strong> {{data.getConsInfo.getConsResponse.primary_address.state}}
+        </p>
+        <p>
+          <strong>Postal Code:</strong> {{data.getConsInfo.getConsResponse.primary_address.zip}}
+        </p>
+        <p>
+          <strong>Email Address:</strong> {{data.getConsInfo.getConsResponse.email.primary_address}}
+        </p>
+      </div>
+      <div class="col-md-6 event-box">
+        <h4>Event Information</h4>
+        <p>
+          <strong>Participation Type:</strong> {{data.participationType}}
+        </p>
+        <p>
+          <strong>Team name:</strong> <span  *ngIf="data.teamName">{{data.teamName}}</span>
+          <span  *ngIf="!data.teamName">None</span>
+        </p>
+        <p>
+          <strong>Tentmate Status: </strong>{{data.tentStatus}}
+        </p>
+        <p>
+          <strong>Pre-Register:</strong> <span *ngIf="surveyResults.getSurveyResponsesResponse">{{preReg}}</span>
+        </p>
+        <p>
+          <strong>Emergency Contact:</strong> {{data.emergencyName}}
+        </p>
+        <p>
+          <strong>Emergency Contact Phone:</strong> {{data.emergencyPhone}}
+        </p>
+      </div>
+    </div>
+
+    <div class="border-btm section-divide"></div>
+    <!-- <br /> -->
+
+    <!-- 		<div class="row" *ngIf="data.getConsInfo">
+            </div> -->
+    <!-- 		<div class="pick-up-packet">
+          <h4>Packet Pick-Up</h4>
+          <p>Here are the times and locations where packet pick-up is available:</p>
+          <div class='packet-box' *ngIf="data.participationType !== 'Crew'">
+            <div>
+              <p class="region-name txt-blue text-uppercase">
+                <strong>Toronto</strong>
+              </p>
+              <p>
+                Early Packet Pick-up at - Enercare Centre, Salon 101, Toronto ON
+              </p>
+          </div>
+            <p>
+              Wednesday, June 6<br>11:00 a.m. - 8:00 p.m.
+            </p>
+            <p>
+              Thursday, June 7<br>7:30 a.m. - 4:00 p.m.
+            </p>
+            <p>
+              <strong>Bike Drop Off and Packet Pick-Up at Exhibition Place</strong> - Parking Lot 2, 200 Prince's Blvd., Toronto, ON
+            </p>
+            <p>
+              Friday, June 8<br>2:00 p.m. - 7:00 p.m.
+            </p>
+            <div>
+              <p class="region-name txt-blue text-uppercase">
+                <strong>Niagara</strong>
+              </p>
+              <p>
+                Packet Pick-up Niagara Start Line - 7200 Niagara Parkway, Niagara ON
+              </p>
+            </div>
+            <p>
+              Friday, June 8<br>6:00 p.m. - 8:00 p.m.
+            </p>
+            <p class="packet-info">
+              <strong>Packet Pick-Up will also be available beginning at 6:30 a.m. on Saturday, June 9. It is strongly encouraged that you retrieve your packet before this date if possible.</strong>
+            </p>
+          </div>
+          <div class='packet-box' *ngIf="data.participationType === 'Crew'">
+            <p class="region-name txt-blue text-uppercase">
+              <strong>Crew Only</strong>
+            </p>
+            <p>
+              Packets can be picked-up at the All Crew meeting on Friday, June 8, 2018.
+            </p>
+          </div>
+            </div> -->
+    <div class="row section-two">
+      <div class="col-xs-6 button-link">
+        <a href="https://secure2.convio.net/cfrca/site/SPageServer?pagename=va18_pc&pc2_page=center&fr_id=1662" target="_blank">
+          <button
+            mat-raised-button
+            class="search-btn button-font center-btn">
+            Return to Participant Centre
+          </button>
+        </a>
+      </div>
+      <div class="col-xs-6 button-link">
+        <a href="http://ride.conquercancer.ca/vancouver/event-details/" target="_blank" >
+          <button
+            mat-raised-button
+            class="search-btn button-font center-btn button-event">
+            Event Details
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

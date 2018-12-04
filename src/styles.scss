@@ -1,0 +1,221 @@
+/* You can add global styles to this file, and also import other style files */
+
+$gray: #efefef;
+$blue: #0075c9;
+$white: #fff;
+$black: #000;
+
+@font-face {
+  font-family: FuturaReg;
+  src: url(/cfrca/va18_oci/assets/fonts/FuturaLTPro-Book.otf);
+}
+
+@font-face {
+  font-family: FuturaBold;
+  src: url(/cfrca/va18_oci/assets/fonts/FuturaLTPro-Bold.otf);
+}
+.step {
+  font-family: FuturaBold, Arial, sans-serif;
+}
+body {
+  font-family: FuturaReg, Arial, sans-serif;
+  padding-bottom: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: FuturaBold, Arial, sans-serif;
+}
+
+strong {
+  font-family: FuturaBold, Arial, sans-serif;
+}
+
+// Buttons
+button.mat-raised-button.mat-primary,
+button.mat-raised-button.mat-accent  {
+  width: 100%;
+  text-transform: uppercase;
+  height: 50px;
+  font-size: 18px;
+}
+
+button.prev-btn.mat-raised-button.mat-accent {
+  background: $white;
+  border: 2px solid #dadada;
+  box-shadow: none;
+  color: #dadada;
+  max-width: max-content;
+}
+
+.next-btn {
+  max-width: max-content;
+  float: right;
+}
+.prev-btn {
+  max-width: max-content;
+  margin-right: 30px;
+  float: left;
+}
+
+.btn-bw {
+  background: none;
+  border: 2px solid #000;
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  cursor: pointer;
+  font-family: FuturaBold, Arial, sans-serif;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+.search-btn {
+  max-width: 300px;
+  width: 100%;
+  border: 2px solid #0075c9;
+  color: #0075c9;
+  height: 50px;
+}
+
+// Global Classes
+.form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  // border: 1px solid #dadada;
+  margin-top: 30px;
+  // background-color: #efefef;
+  @media screen and (max-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+.mat-input {
+  width: 100%;
+}
+
+// Save for Later
+.save-later {
+  font-family: FuturaBold, Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+}
+
+.btn-container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+  @media screen and (max-width: 400px) {
+    margin-bottom: 0;
+  }
+}
+
+.save-col {
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  @media screen and (max-width: 400px) {
+    height: auto;
+    .save-later {
+      text-align: right;
+      padding: 10px 0;
+    }
+  }
+}
+
+// Text Colors
+.txt-blue {
+  color: $blue;
+}
+
+.txt-grey {
+  color: #bababa;
+}
+
+.font-bold {
+  font-family: FuturaBold, Arial, sans-serif;
+  font-weight: 700;
+}
+
+// Black Border
+.border-btm {
+  border-bottom: 3px solid $black;
+  margin-bottom: 30px;
+}
+
+// Snackbar Notifications --Blue (successful)
+::ng-deep snack-bar-container.saved-info {
+  background: #0075c9;
+  color: #fff;
+}
+
+::ng-deep .saved-info .mat-simple-snackbar {
+  color: #fff;
+}
+
+::ng-deep .saved-info .mat-simple-snackbar-action {
+  color: #fff;
+}
+
+//Snackbar Notifications --Red (errors)
+::ng-deep snack-bar-container.error-info {
+  background: #FF5000;
+  color: #fff;
+}
+
+::ng-deep .error-info .mat-simple-snackbar {
+  color: #fff;
+}
+
+::ng-deep .error-info .mat-simple-snackbar-action {
+  color: #fff;
+}
+
+//Snackbar Notifications --Green (routing)
+::ng-deep snack-bar-container.routing-info {
+  background: #00AA8D;
+  color: #fff;
+}
+
+::ng-deep .routing-info .mat-simple-snackbar {
+  color: #fff;
+}
+
+::ng-deep .routing-info .mat-simple-snackbar-action {
+  color: #fff;
+}
+
+// Preloader
+
+.mat-spinner-container.ng-star-inserted {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: $gray;
+  z-index: 99;
+  transition: all 0.2s ease-in-out;
+}
+
+.spinner-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+// Global Media Queries go under here
+
+@media screen and (max-width: 400px) {
+  .row {
+    margin: 20px auto;
+  }
+}

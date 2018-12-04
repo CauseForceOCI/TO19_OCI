@@ -1,0 +1,153 @@
+@import '../../styles.scss';
+
+#step-02 {
+  margin-bottom: 30px;
+
+  .link-black {
+    color: #000000;
+    text-decoration: underline;
+    // font-family: FuturaBold, Arial, sans-serif;
+    font-family: FuturaReg, Arial, sans-serif;
+
+  }
+
+  .row {
+    margin: 0 auto;
+    //margin: 20px auto;
+    .pg-container {
+      h3 {
+        text-align: center;
+        margin-bottom: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .english-locale {
+      .pg-container {
+        h3 {
+          margin: 20px 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .update-intro {
+      margin-bottom: -5px !important;
+    }
+    h3 {
+      padding: 20px 0;
+    }
+  }
+}
+
+#admin-container {
+  background: #000;
+  color: #fff;
+}
+// .form-container {
+// 	width: 100%;
+// 	max-width: 600px;
+// 	margin: 0 auto;
+// 	border: 1px solid #dadada;
+//     margin-top: 30px;
+//     padding: 20px;
+//     background-color: #efefef;
+// }
+
+ul {
+  padding-left: 15px;
+  li {
+    span {
+      color: #000;
+      font-family: FuturaBold, Helveticca, sans-serif;
+      cursor: pointer;
+    }
+  }
+}
+
+.button-font {
+  font-family: FuturaBold, Arial, sans-serif;
+}
+.font-ital {
+  font-style: italic;
+}
+
+.btn-blue {
+  background-color: #0075c9;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border: none;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #008df2;
+  }
+  &:active {
+    background-color: #005693;
+  }
+}
+
+select {
+  display: block;
+  border: none;
+  outline: 1px solid #000;
+  height: 30px;
+}
+.mat-input {
+  width: 100%;
+}
+
+.next-btn {
+  max-width: max-content;
+}
+
+.change-txt {
+  margin-bottom: 0px;
+  small {
+    margin-left: 15px;
+  }
+}
+
+.pg-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto 30px;
+  @media screen and (max-width: 400px) {
+    margin: 0 auto;
+  }
+}
+
+.dialog-h1 {
+  text-align: center;
+}
+
+mat-dialog-container.mat-dialog-container.ng-tns-c9-0.ng-trigger.ng-trigger-slideDialog.ng-star-inserted {
+  max-width: 600px;
+}
+
+.mat-radio-button {
+  display: block;
+}
+
+.italics-font {
+  font-style: italic;
+}
+
+@media screen and (max-width: 400px) {
+  .form-container {
+    margin-top: 15px;
+  }
+  #step-02-french .update-intro {
+    padding: 20px 0;
+  }
+}

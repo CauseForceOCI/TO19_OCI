@@ -1,0 +1,127 @@
+@import '../../styles.scss';
+
+.stepper-container {
+  position: relative;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+
+  padding: 0 10px 40px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  .stepper-each {
+    max-width: 13.7%;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    @media screen and (max-width: 768px) {
+      max-width: 13.1%;
+    }
+    @media screen and (max-width: 400px) {
+      max-width: 13%;
+    }
+    @media screen and (max-width: 365px) {
+      max-width: 23%;
+    }
+
+    .step {
+      background: #dadada;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: block;
+      margin: 0 auto 15px;
+      text-align: center;
+      line-height: 2.6;
+      color: #fff;
+    }
+
+    .stepper-txt {
+      color: #909090;
+      font-size: 12px;
+      text-align: center;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  .stepper-each.active {
+    .step {
+      background: $blue;
+    }
+  }
+
+  .stepper-each.active.current {
+    .stepper-txt {
+      color: $blue;
+      font-family: FuturaBold, Helveticca, sans-serif;
+    }
+  }
+
+  .bar {
+    border-bottom: 5px solid #dadada;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    max-width: 88%;
+    margin: 0 auto;
+    @media screen and (max-width: 768px) {
+      width: 82%;
+    }
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  .progress-full,
+  .progress-2,
+  .progress-3,
+  .progress-4,
+  .progress-5,
+  .progress-6,
+  .progress-7,
+  .progress-8 {
+    border-bottom: 5px solid #1374ca;
+    position: absolute;
+    top: 20px;
+    left: 45px;
+    right: 0;
+    z-index: -1;
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  .progress-2 {
+    max-width: 16%;
+  }
+  .progress-3 {
+    max-width: 31%;
+  }
+  .progress-4 {
+    max-width: 45%;
+  }
+  .progress-5 {
+    max-width: 58%;
+  }
+  .progress-6 {
+    max-width: 72%;
+  }
+  .progress-7 {
+    max-width: 84%;
+  }
+  @media screen and (max-width: 400px) {
+    padding-bottom: 0px;
+  }
+}
+
+.hide {
+  display: none;
+}

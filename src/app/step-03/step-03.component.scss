@@ -1,0 +1,110 @@
+//@import '../../styles.scss';
+
+//#step-03,
+//#step-03-french{
+//  .sizing-link {
+//    text-decoration: underline;
+//  }
+//	@media screen and (max-width: 768px) {
+//		margin-top: 20px;
+//	}
+//}
+
+//@import '../../styles.scss';
+
+.col-12 {
+  p,
+  .btn-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 30px;
+    @media screen and (max-width: 400px) {
+      margin: 0 auto;
+    }
+  }
+  h3 {
+    @media screen and (max-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+}
+.sizing-link {
+  text-decoration: underline;
+}
+.mat-form-field-infix {
+  width: 100%;
+}
+
+.break-responsive {
+  @media screen and (max-width:380px) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.mat-input {
+  //max-width: 300px;
+  @media screen and (max-width: 400px) {
+    max-width: none;
+  }
+}
+
+.change-txt {
+  margin-bottom: 0px;
+  small {
+    margin-left: 15px;
+  }
+}
+
+.link-black {
+  color: #000000;
+  text-decoration: underline;
+  // font-family: FuturaBold, Arial, sans-serif;
+  font-family: FuturaReg, Arial, sans-serif;
+}
+.border-btm {
+  margin: 20px 0;
+}
+
+.button-font {
+  font-family: FuturaBold, Arial, sans-serif;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.prev-btn {
+  margin-right: 30px;
+}
+
+.mat-radio-button {
+  display: block;
+}
+
+strong {
+  a {
+    color: #0075c9;
+  }
+}
+.form-group {
+  p {
+    font-size: 0.99rem;
+  }
+}
+
+
+.form-group:first-child .mat-input,
+.form-group:nth-child(2) .mat-input{
+  max-width: none;
+}
+
+::ng-deep label.mat-radio-label {
+  white-space: normal;
+}
+
+@media screen and (max-width: 400px) {
+  .form-container {
+    margin-top: 15px;
+  }
+}
